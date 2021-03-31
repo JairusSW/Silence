@@ -47,7 +47,7 @@ class WebSocket {
     
   }
 
-const socket = new WebSocket('ws://localhost:3000')
+const socket = new WebSocket('ws://silence.jairussw.repl.co/')
 
 function prompt(prompt: string, callback: (message: string) => void): void {
 
