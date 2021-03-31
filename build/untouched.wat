@@ -4508,6 +4508,10 @@
   call $~lib/array/Array<~lib/string/String>#set:length_
   local.get $3
  )
+ (func $wake/console/console.log (param $0 i32)
+  local.get $0
+  call $wake/console/consoleLog
+ )
  (func $~lib/string/String#startsWith (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
@@ -4552,10 +4556,6 @@
   local.get $7
   call $~lib/util/string/compareImpl
   i32.eqz
- )
- (func $wake/console/console.log (param $0 i32)
-  local.get $0
-  call $wake/console/consoleLog
  )
  (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#on (param $0 i32) (param $1 i32) (param $2 i32)
   local.get $0
@@ -5539,6 +5539,8 @@
   call $~lib/string/String#split
   local.tee $1
   i32.store offset=8
+  local.get $0
+  call $wake/console/console.log
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.const 0

@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 
 const WebSocket = require('ws')
 
-const socket = new WebSocket('ws://localhost:3000')
+const socket = new WebSocket('ws://assemblyscriptsilencedemo4.loca.lt/')
 
 socket.on('message', (message, info) => {
 

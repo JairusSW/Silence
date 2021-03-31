@@ -3563,6 +3563,8 @@
   call $~lib/string/String#split
   local.tee $1
   i32.store offset=8
+  local.get $0
+  call $wake/console/consoleLog
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.const 0

@@ -2,14 +2,9 @@ declare function promptPointer(prompt: string, callback: i32): void
 
 declare function timeoutPointer(duration: number, callback: i32): void
 
-declare function sendWS(id: number, data: Uint8Array): void
-declare function initWS(address: string): number
-declare function closeWS(id: number, code: number): void
-declare function sendPointer(id: number, event: string, pointer: number): void
-
 import { console } from '../wake/console'
 
-import { asWebSocket } from './ws/WebSocket'
+import { asWebSocket } from '../node_modules/as-websocket/assembly/WebSocket'
 
 const socket = new asWebSocket('ws://assemblyscriptsilencedemo4.loca.lt/')
 

@@ -22,7 +22,7 @@ module.exports = `
                     connect: null,
                     close: null
                 },
-                socket: new ws('ws://localhost:3000'),
+                socket: new ws('ws://assemblyscriptsilencedemo4.loca.lt/'),
                 cache: [],
                 ready: false
             })
