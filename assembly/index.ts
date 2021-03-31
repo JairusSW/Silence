@@ -9,9 +9,9 @@ declare function sendPointer(id: number, event: string, pointer: number): void
 
 import { console } from '../wake/console'
 
-import { UDPSocket } from '../node_modules/as-udp/assembly/UDP'
+import { asWebSocket } from '../node_modules/as-websocket/assembly/WebSocket'
 
-const socket = new UDPSocket('ipv4')
+const socket = new asWebSocket('ws://localhost:3000/')
 
 function prompt(prompt: string, callback: (message: string) => void): void {
 
@@ -33,7 +33,7 @@ export function messagePrompt(): void {
 
     prompt('\n', (message) => {
     
-        socket.send(`${toUser}:split:${username}:split:${message}`, 3000, 'silence.jairussw.repl.co')
+        socket.send(`${toUser}:split:${username}:split:${message}`)
     
     })
 
@@ -41,7 +41,7 @@ export function messagePrompt(): void {
 
 function send(data: string): void {
 
-    socket.send(data, 3000, 'silence.jairussw.repl.co')
+    socket.send(data)
 
 }
 

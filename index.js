@@ -22,14 +22,14 @@ const rl = readline.createInterface({
 
 // WebSocket
 
-const udpImports = require('./imports')
+const wsImports = require('./imports')
 
 // UDP
 
 //const udpImports = require('as-udp')
 
 const imports = {
-    ...eval(udpImports),
+    ...eval(wsImports),
     console: {
         consoleDebug: (message) => {
 
