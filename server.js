@@ -4,8 +4,20 @@ const server = new WebSocket.Server({
     port: 3000
 })
 
+const localtunnel = require('localtunnel')
+
 let clients = new Map()
 
+server.on('listening', async () => {
+
+    const tunnel = await localtunnel({
+        port: 3000,
+        subdomain: 'assemblyscriptsilencedemo4'
+    })
+
+    console.log('Listening on: ', tunnel.url)
+
+})
 server.on('connection', (client) => {
 
     client.on('message', (message) => {

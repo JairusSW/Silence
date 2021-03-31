@@ -11,7 +11,7 @@ import { console } from '../wake/console'
 
 import { asWebSocket } from '../node_modules/as-websocket/assembly/WebSocket'
 
-const socket = new asWebSocket('ws://localhost:3000/')
+const socket = new asWebSocket('ws://assemblyscriptsilencedemo4.loca.lt/')
 
 function prompt(prompt: string, callback: (message: string) => void): void {
 

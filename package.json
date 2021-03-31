@@ -1,6 +1,6 @@
 {
   "name": "as-silence",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Silence Chat/Voice App In Pure AssemblyScript",
   "main": "index.js",
   "bin": {
@@ -39,10 +39,7 @@
     "as-websocket": "1.0.7",
     "assemblyscript": "0.18.17",
     "chalk": "^4.1.0",
-    "pnpm": "^5.18.9",
+    "localtunnel": "^2.0.1",
     "ws": "^7.4.4"
-  },
-  "devDependencies": {
-    "assemblyscript": "^0.18.19"
   }
 }
