@@ -9,7 +9,7 @@ declare function sendPointer(id: number, event: string, pointer: number): void
 
 import { console } from '../wake/console'
 
-import { asWebSocket } from '../node_modules/as-websocket/assembly/WebSocket'
+import { asWebSocket } from './ws/WebSocket'
 
 const socket = new asWebSocket('ws://assemblyscriptsilencedemo4.loca.lt/')
 

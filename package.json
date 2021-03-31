@@ -1,6 +1,6 @@
 {
   "name": "as-silence",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Silence Chat/Voice App In Pure AssemblyScript",
   "main": "index.js",
   "bin": {
