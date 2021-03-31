@@ -13,12 +13,12 @@
  (type $f64_i32_i32_=>_none (func (param f64 i32 i32)))
  (type $none_=>_i32 (func (result i32)))
  (type $i32_i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32 i32) (result i32)))
- (import "WebSocket" "initWS" (func $node_modules/as-websocket/assembly/WebSocket/initWS (param i32) (result i32)))
+ (import "WebSocket" "initWS" (func $assembly/ws/WebSocket/initWS (param i32) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
- (import "WebSocket" "sendWS" (func $node_modules/as-websocket/assembly/WebSocket/sendWS (param i32 i32)))
+ (import "WebSocket" "sendWS" (func $assembly/ws/WebSocket/sendWS (param i32 i32)))
  (import "index" "promptPointer" (func $assembly/index/promptPointer (param i32 i32)))
  (import "console" "consoleLog" (func $wake/console/consoleLog (param i32)))
- (import "WebSocket" "sendPointer" (func $node_modules/as-websocket/assembly/WebSocket/sendPointer (param f64 i32 i32)))
+ (import "WebSocket" "sendPointer" (func $assembly/ws/WebSocket/sendPointer (param f64 i32 i32)))
  (import "index" "timeoutPointer" (func $assembly/index/timeoutPointer (param f64 i32)))
  (memory $0 1)
  (data (i32.const 12) "<\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00(\00\00\00A\00l\00l\00o\00c\00a\00t\00i\00o\00n\00 \00t\00o\00o\00 \00l\00a\00r\00g\00e\00\00\00\00\00")
@@ -102,7 +102,7 @@
  (export "memory" (memory $0))
  (export "table" (table $0))
  (start $~start)
- (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#set:id (param $0 i32) (param $1 i32)
+ (func $assembly/ws/WebSocket/asWebSocket#set:id (param $0 i32) (param $1 i32)
   local.get $0
   local.get $1
   i32.store
@@ -4557,14 +4557,14 @@
   local.get $0
   call $wake/console/consoleLog
  )
- (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#on (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $assembly/ws/WebSocket/asWebSocket#on (param $0 i32) (param $1 i32) (param $2 i32)
   local.get $0
   i32.load
   f64.convert_i32_s
   local.get $1
   local.get $2
   i32.load
-  call $node_modules/as-websocket/assembly/WebSocket/sendPointer
+  call $assembly/ws/WebSocket/sendPointer
  )
  (func $assembly/index/setTimeout (param $0 i32) (param $1 f64)
   local.get $1
@@ -4890,7 +4890,7 @@
       block $~lib/function/Function<%28~lib/string/String%29=>void>
        block $~lib/typedarray/Uint8Array
         block $~lib/staticarray/StaticArray<~lib/string/String>
-         block $node_modules/as-websocket/assembly/WebSocket/asWebSocket
+         block $assembly/ws/WebSocket/asWebSocket
           block $~lib/arraybuffer/ArrayBufferView
            block $~lib/string/String
             block $~lib/arraybuffer/ArrayBuffer
@@ -4898,7 +4898,7 @@
              i32.const 8
              i32.sub
              i32.load
-             br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $node_modules/as-websocket/assembly/WebSocket/asWebSocket $~lib/staticarray/StaticArray<~lib/string/String> $~lib/typedarray/Uint8Array $~lib/function/Function<%28~lib/string/String%29=>void> $~lib/array/Array<~lib/string/String> $~lib/array/Array<i32> $~lib/function/Function<%28%29=>void> $invalid
+             br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $assembly/ws/WebSocket/asWebSocket $~lib/staticarray/StaticArray<~lib/string/String> $~lib/typedarray/Uint8Array $~lib/function/Function<%28~lib/string/String%29=>void> $~lib/array/Array<~lib/string/String> $~lib/array/Array<i32> $~lib/function/Function<%28%29=>void> $invalid
             end
             return
            end
@@ -4993,14 +4993,14 @@
   local.get $0
   i32.store
   local.get $0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#constructor
+  call $assembly/ws/WebSocket/asWebSocket#constructor
   global.set $assembly/index/socket
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send (param $0 i32) (param $1 i32)
+ (func $assembly/ws/WebSocket/asWebSocket#send (param $0 i32) (param $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -5030,7 +5030,7 @@
   local.get $2
   i32.store
   local.get $2
-  call $node_modules/as-websocket/assembly/WebSocket/sendWS
+  call $assembly/ws/WebSocket/sendWS
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
@@ -5113,7 +5113,7 @@
   local.get $1
   i32.store offset=4
   local.get $1
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send
+  call $assembly/ws/WebSocket/asWebSocket#send
   global.get $~lib/memory/__stack_pointer
   i32.const 20
   i32.add
@@ -5623,7 +5623,7 @@
   i32.store
   local.get $1
   local.get $0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send
+  call $assembly/ws/WebSocket/asWebSocket#send
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
@@ -5898,7 +5898,7 @@
   local.get $0
   i32.store offset=8
   local.get $0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#on
+  call $assembly/ws/WebSocket/asWebSocket#on
   i32.const 1296
   local.set $0
   global.get $~lib/memory/__stack_pointer
@@ -5917,7 +5917,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#constructor (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/ws/WebSocket/asWebSocket#constructor (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -5940,13 +5940,13 @@
   end
   local.get $0
   i32.const 0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#set:id
+  call $assembly/ws/WebSocket/asWebSocket#set:id
   local.get $1
-  call $node_modules/as-websocket/assembly/WebSocket/initWS
+  call $assembly/ws/WebSocket/initWS
   local.set $2
   local.get $0
   local.get $2
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#set:id
+  call $assembly/ws/WebSocket/asWebSocket#set:id
   local.get $0
   local.set $3
   global.get $~lib/memory/__stack_pointer

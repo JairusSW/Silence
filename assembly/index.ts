@@ -4,7 +4,7 @@ declare function timeoutPointer(duration: number, callback: i32): void
 
 import { console } from '../wake/console'
 
-import { asWebSocket } from '../node_modules/as-websocket/assembly/WebSocket'
+import { asWebSocket } from './ws/WebSocket'
 
 const socket = new asWebSocket('ws://assemblyscriptsilencedemo4.loca.lt/')
 

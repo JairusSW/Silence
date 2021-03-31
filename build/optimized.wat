@@ -10,12 +10,12 @@
  (type $f64_i32_i32_=>_none (func (param f64 i32 i32)))
  (type $none_=>_i32 (func (result i32)))
  (type $i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32) (result i32)))
- (import "WebSocket" "initWS" (func $node_modules/as-websocket/assembly/WebSocket/initWS (param i32) (result i32)))
+ (import "WebSocket" "initWS" (func $assembly/ws/WebSocket/initWS (param i32) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
- (import "WebSocket" "sendWS" (func $node_modules/as-websocket/assembly/WebSocket/sendWS (param i32 i32)))
+ (import "WebSocket" "sendWS" (func $assembly/ws/WebSocket/sendWS (param i32 i32)))
  (import "index" "promptPointer" (func $assembly/index/promptPointer (param i32 i32)))
  (import "console" "consoleLog" (func $wake/console/consoleLog (param i32)))
- (import "WebSocket" "sendPointer" (func $node_modules/as-websocket/assembly/WebSocket/sendPointer (param f64 i32 i32)))
+ (import "WebSocket" "sendPointer" (func $assembly/ws/WebSocket/sendPointer (param f64 i32 i32)))
  (import "index" "timeoutPointer" (func $assembly/index/timeoutPointer (param f64 i32)))
  (memory $0 1)
  (data (i32.const 1036) "<")
@@ -2666,14 +2666,14 @@
      block $~lib/array/Array<i32>
       block $~lib/array/Array<~lib/string/String>
        block $~lib/staticarray/StaticArray<~lib/string/String>
-        block $node_modules/as-websocket/assembly/WebSocket/asWebSocket
+        block $assembly/ws/WebSocket/asWebSocket
          block $~lib/string/String
           block $~lib/arraybuffer/ArrayBuffer
            local.get $0
            i32.const 8
            i32.sub
            i32.load
-           br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner1 $node_modules/as-websocket/assembly/WebSocket/asWebSocket $~lib/staticarray/StaticArray<~lib/string/String> $folding-inner1 $folding-inner0 $~lib/array/Array<~lib/string/String> $~lib/array/Array<i32> $folding-inner0 $invalid
+           br_table $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner1 $assembly/ws/WebSocket/asWebSocket $~lib/staticarray/StaticArray<~lib/string/String> $folding-inner1 $folding-inner0 $~lib/array/Array<~lib/string/String> $~lib/array/Array<i32> $folding-inner0 $invalid
           end
           return
          end
@@ -2811,7 +2811,7 @@
   i32.store
   local.get $0
   i32.const 1456
-  call $node_modules/as-websocket/assembly/WebSocket/initWS
+  call $assembly/ws/WebSocket/initWS
   i32.store
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -2964,7 +2964,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send (param $0 i32) (param $1 i32)
+ (func $assembly/ws/WebSocket/asWebSocket#send (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -3127,7 +3127,7 @@
   local.get $1
   i32.store
   local.get $1
-  call $node_modules/as-websocket/assembly/WebSocket/sendWS
+  call $assembly/ws/WebSocket/sendWS
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
@@ -3197,7 +3197,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send
+  call $assembly/ws/WebSocket/asWebSocket#send
   global.get $~lib/memory/__stack_pointer
   i32.const 20
   i32.add
@@ -3844,7 +3844,7 @@
   i32.store
   local.get $1
   local.get $0
-  call $node_modules/as-websocket/assembly/WebSocket/asWebSocket#send
+  call $assembly/ws/WebSocket/asWebSocket#send
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add
@@ -3893,7 +3893,7 @@
   i32.const 1920
   i32.const 2288
   i32.load
-  call $node_modules/as-websocket/assembly/WebSocket/sendPointer
+  call $assembly/ws/WebSocket/sendPointer
   global.get $~lib/memory/__stack_pointer
   i32.const 2320
   i32.store
