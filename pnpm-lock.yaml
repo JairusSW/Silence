@@ -1,9 +1,10 @@
 dependencies:
   '@assemblyscript/loader': 0.18.19
   as-udp: 1.0.1
-  as-websocket: 1.0.2
+  as-websocket: 1.0.7
   assemblyscript: 0.18.19
   chalk: 4.1.0
+  pnpm: 5.18.9
   ws: 7.4.4
 lockfileVersion: 5.2
 packages:
@@ -34,14 +35,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-v4DVwqV5nYPeWYU0kMMC6osC9YIGpF8L6sMn95isqHT0iCncAtk2AshZWoAE1kOwYS6eekFSn1eNkGa5wGWIHA==
-  /as-websocket/1.0.2:
+  /as-websocket/1.0.7:
     dependencies:
       '@assemblyscript/loader': 0.18.19
       assemblyscript: 0.18.19
       ws: 7.4.4
     dev: false
     resolution:
-      integrity: sha512-44+0CO/yLCutdmOuknsTFJXlLWEbRxQIv1mQRERi8DmIJTkX0v+FhdtE0wRtwBfJq3zMo+h1BUy3lmlndYd9mQ==
+      integrity: sha512-O8weU/N10z234KiU6IFgIW4ld6NWSO90/9W6JZy6UZjnzFdHHElRfy5VKxtPUv+VtqqXVLC7kgfRjRHATOAShA==
   /assemblyscript/0.18.19:
     dependencies:
       binaryen: 100.0.0
@@ -86,6 +87,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
+  /pnpm/5.18.9:
+    dev: false
+    engines:
+      node: '>=10.16'
+    hasBin: true
+    resolution:
+      integrity: sha512-TYIkMI/ydQkorwVe5CGTZQj0Bn1Cd7aEMYLV91AIAwqiwt7ItrHkBnwmORS49r6vpNtjYE+4M6/6O2w1tcnbaA==
   /supports-color/7.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -111,7 +119,8 @@ packages:
 specifiers:
   '@assemblyscript/loader': ^0.18.19
   as-udp: ^1.0.1
-  as-websocket: ^1.0.2
+  as-websocket: 1.0.7
   assemblyscript: ^0.18.19
   chalk: ^4.1.0
+  pnpm: ^5.18.9
   ws: ^7.4.4

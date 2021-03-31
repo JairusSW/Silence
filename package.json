@@ -36,7 +36,7 @@
   "dependencies": {
     "@assemblyscript/loader": "^0.18.19",
     "as-udp": "^1.0.1",
-    "as-websocket": "^1.0.2",
+    "as-websocket": "1.0.7",
     "assemblyscript": "^0.18.19",
     "chalk": "^4.1.0",
     "pnpm": "^5.18.9",

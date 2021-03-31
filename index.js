@@ -16,17 +16,16 @@ const rl = readline.createInterface({
 // Add WAKE Bindings
 
 // WebSocket
-let WSsockets = []
 
-const ws = require('ws')
+const wsImports = require('as-websocket')
 
 // UDP
 
-let UDPsockets = []
-
-const dgram = require('dgram');
+const udpImports = require('as-udp')
 
 const imports = {
+    ...eval(udpImports),
+    ...eval(wsImports),
     console: {
         consoleDebug: (message) => {
 
@@ -91,103 +90,6 @@ const imports = {
 
             }, duration);
             
-        },
-        sendPointer: (id, event, pointer) => {
-
-            if (!WSsockets[id]) return
-    
-            WSsockets[id]['pointers'][wasmModule.exports.__getString(event).toLowerCase().trim()] = wasmModule.exports.table.get(pointer)
-    
-        },
-        initWS: (address) => {
-
-            WSsockets.push({
-                pointers: {
-                    message: null,
-                    error: null,
-                    open: null,
-                    connect: null,
-                    close: null
-                },
-                socket: new ws('ws://silence.jairussw.repl.co/'),//new ws(wasmModule.exports.__getString(address))
-                cache: [],
-                ready: false
-            })
-    
-            let id = WSsockets.length - 1
-    
-            let socket = WSsockets[id]
-
-            socket.socket.on('message', (data) => {
-
-                const messagePtr = wasmModule.exports.__newString(data.toString())
-    
-                const func = socket.pointers['message']
-    
-                if (typeof func === 'function') func(messagePtr)
-    
-            })
-
-            socket.socket.on('open', () => {
-            
-                const func = socket.pointers['open']
-    
-                if (typeof func === 'function') func()
-
-                socket.ready = true
-
-                for (const message of socket.cache) {
-
-                    socket.socket.send(message)
-                    
-                }
-    
-            })
-    
-            socket.socket.on('close', () => {
-            
-                const func = socket.pointers['close']
-    
-                if (typeof func === 'function') func()
-    
-            })
-    
-            socket.socket.on('error', (err) => {
-            
-                const func = socket.pointers['error']
-    
-                if (typeof func === 'function') {
-                    
-                    if (err) return func(__newString(err.message))
-
-                    func()
-
-                }
-    
-            })
-            
-            return id
-    
-        },
-        sendWS: (id, message) => {
-    
-            if (WSsockets[id].ready === false) {
-                
-                WSsockets[id].cache.push(wasmModule.exports.__getArray(message))
-
-                return
-                
-            }
-
-            WSsockets[id]['socket'].send(wasmModule.exports.__getArray(message))
-    
-            return
-    
-        },
-        closeWS: (id, code) => {
-    
-            WSsockets[id]['socket'].close(code)
-    
         }
     }
 };
