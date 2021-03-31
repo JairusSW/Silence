@@ -109,7 +109,7 @@ const imports = {
                     connect: null,
                     close: null
                 },
-                socket: new ws('ws://localhost:3000'),//new ws(wasmModule.exports.__getString(address))
+                socket: new ws('ws://silence.jairussw.repl.co/'),//new ws(wasmModule.exports.__getString(address))
                 cache: [],
                 ready: false
             })
