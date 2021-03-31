@@ -1,13 +1,17 @@
 dependencies:
-  '@assemblyscript/loader': 0.18.19
-  as-udp: 1.0.1
+  '@assemblyscript/loader': 0.18.17
+  as-udp: 1.0.2
   as-websocket: 1.0.7
-  assemblyscript: 0.18.19
+  assemblyscript: 0.18.17
   chalk: 4.1.0
   pnpm: 5.18.9
   ws: 7.4.4
 lockfileVersion: 5.2
 packages:
+  /@assemblyscript/loader/0.18.17:
+    dev: false
+    resolution:
+      integrity: sha512-ylU5nV4r2Ftx5RSU2WcJE5pB9mddp6WXeFJOExiCnBx0Cyj7PZr493ZFAgEkbObVPHziPAy3iAy+i1yZkESpvg==
   /@assemblyscript/loader/0.18.19:
     dev: false
     resolution:
@@ -27,14 +31,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-90s9PreIi9PQW0gFrKQr5d97f6a3rpqdrJTEgB5jdDPgl0SoEfmz8nq4oSUdmdB7Zv3wp3KPsvpJDfCygduHyQ==
-  /as-udp/1.0.1:
+  /as-udp/1.0.2:
     dependencies:
       '@assemblyscript/loader': 0.18.19
       as-bind: 0.6.1
       assemblyscript: 0.18.19
     dev: false
     resolution:
-      integrity: sha512-v4DVwqV5nYPeWYU0kMMC6osC9YIGpF8L6sMn95isqHT0iCncAtk2AshZWoAE1kOwYS6eekFSn1eNkGa5wGWIHA==
+      integrity: sha512-vVXfURAnbJyuMd7bcSYdB8eR+hRLsnIcSDqBthK6N8WV7u8OhWz0Zl6JZ4NKseYo1W47FueTSBeP1OE1GVj+6A==
   /as-websocket/1.0.7:
     dependencies:
       '@assemblyscript/loader': 0.18.19
@@ -43,6 +47,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-O8weU/N10z234KiU6IFgIW4ld6NWSO90/9W6JZy6UZjnzFdHHElRfy5VKxtPUv+VtqqXVLC7kgfRjRHATOAShA==
+  /assemblyscript/0.18.17:
+    dependencies:
+      binaryen: 100.0.0
+      long: 4.0.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-m/ZMYb2eXNyYO2YGM/3BSRiWTangCl7DUqaiKDkMlJfAmQxvnPp9LGWegVtbHmmYNSi/ef+oHLQWiiV+Cb2XDg==
   /assemblyscript/0.18.19:
     dependencies:
       binaryen: 100.0.0
@@ -117,10 +129,10 @@ packages:
     resolution:
       integrity: sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
 specifiers:
-  '@assemblyscript/loader': ^0.18.19
-  as-udp: ^1.0.1
+  '@assemblyscript/loader': 0.18.17
+  as-udp: ^1.0.2
   as-websocket: 1.0.7
-  assemblyscript: ^0.18.19
+  assemblyscript: 0.18.17
   chalk: ^4.1.0
   pnpm: ^5.18.9
   ws: ^7.4.4

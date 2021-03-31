@@ -6,7 +6,12 @@ const readline = require('readline')
 
 // Add WasmModule
 
-let wasmModule
+let wasmModule = {
+    exports: {
+        __getString: () => {},
+        __newString: () => {}
+    }
+}
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -17,15 +22,14 @@ const rl = readline.createInterface({
 
 // WebSocket
 
-const wsImports = require('as-websocket')
+const udpImports = require('./imports')
 
 // UDP
 
-const udpImports = require('as-udp')
+//const udpImports = require('as-udp')
 
 const imports = {
     ...eval(udpImports),
-    ...eval(wsImports),
     console: {
         consoleDebug: (message) => {
 
